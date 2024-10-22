@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        h1 {
+            color: springgreen;
+        }
+        p {
+            color: cornsilk;
+            background-color: rebeccapurple;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 50%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: springgreen;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: limegreen;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let email = document.getElementById('email').value;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (username === "" || password === "" || email === "") {
+                alert("All fields must be filled out.");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form>
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+       <button> <a href="register.html">Register</a></button>
+    </form>
+</body>
+</html>
